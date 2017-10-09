@@ -3,7 +3,7 @@
     Prog_76_2
     
     Montando un servidor Web en WIFI mediante
-    un WIFI ESP8266 y comandos AT  
+    un WIFI esp8266 y comandos AT  
     http://www.prometec.net/servidor-web-esp8266
 --------------------------------------------------------------------  
 */
@@ -52,6 +52,15 @@ void loop()
               delay(500);
           }
    }
+   if (esp8266.available())
+         { char c = esp8266.read() ;
+           Serial.print(c);
+         }
+     if (Serial.available())
+         {  char c = Serial.read();
+            Serial.print(c);
+            esp8266.print(c);
+         }
 }
 //Envio de la pagina al WEB server
 void http(String output)
