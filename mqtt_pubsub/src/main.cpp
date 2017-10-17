@@ -9,6 +9,7 @@ PubSubClient *client;
 SoftwareSerial *esp8266;  
 int status; 
 
+
 String leer_valvula(int);
 
 void setup() {
@@ -18,7 +19,7 @@ void setup() {
 
   status = WL_IDLE_STATUS;
   client = new PubSubClient(SERVER, 1883, callback, espClient);
-  esp8266 = new SoftwareSerial(RX_ESP8266, TX_ESP8266);  
+  esp8266 = new SoftwareSerial(TX_ESP8266, RX_ESP8266);  
   
   pinMode(PIN_VALVULA_AGUA, INPUT);
   pinMode(PIN_VALVULA_MALTA, INPUT);

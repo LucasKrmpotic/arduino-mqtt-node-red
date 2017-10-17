@@ -19,7 +19,7 @@
 #define WIFI_PASSWORD "Serruya5000050000Cisco"
 #define CLIENT_ID "arduino_client"
 #define TOKEN "ARDUINO_DEMO_TOKEN"
-#define SERVER "192.168.0.22"
+#define SERVER "192.168.1.119"
 
 /*TOPICOS*/
 #define PUB_TOPIC "out"
@@ -39,8 +39,8 @@
 #define PIN_VALVULA_MALTA   11
 #define PIN_VALVULA_AGUA    10
 #define PIN_PARADA_PROCESO  9
-#define RX_ESP8266          13
-#define TX_ESP8266          12
+#define TX_ESP8266          13
+#define RX_ESP8266          12
 
 /*NO SE ESTA USANDO*/
 // #define SUB_TOPIC "in"
