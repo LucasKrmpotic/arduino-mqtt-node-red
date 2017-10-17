@@ -1,0 +1,38 @@
+  
+  /*Llego un mensaje del topico que estamos suscriptos
+  NO SE ESTA USANDO*/
+  // if(llegoMensaje){
+  //   digitalWrite(BUZZER_PIN, HIGH);
+  //   delay(100);
+  //   digitalWrite(BUZZER_PIN, LOW);
+  //   llegoMensaje = false;
+  // }
+  
+  // valor_tanque_malta = String(analogRead(PIN_TANQUE_MALTA));
+
+
+
+
+
+
+  //  static int counter = 0;
+  
+  //  String payload = "{\"micros\":";
+  //  payload += micros();
+  //  payload += ",\"counter\":";
+  //  payload += counter;
+  //  payload += "}";
+  
+  //  if (client.connected()){
+    //    Serial.print("Sending payload: ");
+    //    Serial.println(payload);
+    
+    //    if (client.publish(PUB_TOPIC, (char*) payload.c_str())) {
+      //      Serial.println("Publish ok");
+      //    }
+      //    else {
+        //      Serial.println("Publish failed");
+        //    }
+        //  }
+        //  ++counter;
+        
