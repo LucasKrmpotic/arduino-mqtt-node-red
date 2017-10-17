@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef _CONFIG_H
+#define _CONFIG_H
 
 #include <Arduino.h>
 
@@ -19,6 +19,7 @@
 #define WIFI_PASSWORD "Serruya5000050000Cisco"
 #define CLIENT_ID "arduino_client"
 #define TOKEN "ARDUINO_DEMO_TOKEN"
+#define SERVER "192.168.0.22"
 
 /*TOPICOS*/
 #define PUB_TOPIC "out"
@@ -50,17 +51,14 @@
 #define BAUD_RATE 9600
 
 
-// IP DEL BROKER MQTT
-char server[] = "192.168.0.22";
 
-void callback(char* topic, byte* payload, unsigned int length);
 void InitWiFi();
 void reconnect();
 
-WiFiEspClient espClient;
-PubSubClient client(server, 1883, callback, espClient);
-SoftwareSerial esp8266(RX_ESP8266, TX_ESP8266); // RX, TX
+extern WiFiEspClient espClient;
+extern PubSubClient *client;
+extern SoftwareSerial *esp8266;  
+extern int status; 
 
-int status = WL_IDLE_STATUS;
 
 #endif
