@@ -2,27 +2,20 @@
 #define _CONFIG_H
 
 #include <Arduino.h>
-
-/*PINES A UTILIZAR*/
-
-//NO SE ESTA USANDO
-// #define BUZZER_PIN 12
-
-#define MINIMO_TANQUE_MALTA 1023 * 0.3
-
 #include <WiFiEspClient.h>
 #include <WiFiEsp.h>
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
 
+#define MAX_SENSORES 6
+
 #define WIFI_AP "SerruyaCisco(noConectar)"
 #define WIFI_PASSWORD "Serruya5000050000Cisco"
 #define CLIENT_ID "arduino_client"
 #define TOKEN "ARDUINO_DEMO_TOKEN"
-#define SERVER "192.168.1.119"
+#define SERVER "192.168.0.22"
 
 /*TOPICOS*/
-#define PUB_TOPIC "out"
 #define TOPICO_TANQUE_MALTA "tanque_malta"
 #define TOPICO_TEMP_TANQUE "temp_tanque_elab"
 #define TOPICO_PRESION_TANQUE "presion_tanque_elab"
@@ -39,18 +32,12 @@
 #define PIN_VALVULA_MALTA   11
 #define PIN_VALVULA_AGUA    10
 #define PIN_PARADA_PROCESO  9
+//Pin TX del ESP8266 tiene que ir al pin 13 del Arduino
 #define TX_ESP8266          13
+//Pin RX del ESP8266 tiene que ir al pin 12 del Arduino
 #define RX_ESP8266          12
 
-/*NO SE ESTA USANDO*/
-// #define SUB_TOPIC "in"
-// boolean llegoMensaje = false;
-
-
-
 #define BAUD_RATE 9600
-
-
 
 void InitWiFi();
 void reconnect();

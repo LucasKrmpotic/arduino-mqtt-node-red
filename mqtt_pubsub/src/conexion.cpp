@@ -18,17 +18,6 @@ void InitWiFi()
   Serial.println("Connected to AP");
 
   
-  /*nos suscribimos al topico SUB_TOPIC
-  NO SE ESTA USANDO*/
-  // if(client->connect(CLIENT_ID, TOKEN, NULL)){
-  //   if(client->subscribe(SUB_TOPIC, 1)){
-  //     Serial.println("Se pudo suscribir al topico " + String("\"") + String(SUB_TOPIC) + String("\"\n"));
-  //   }
-  //   else{
-  //     Serial.println("No se pudo suscribir");
-  //   }
-  //   delay(2000);
-  // }
 }
 
 void reconnect() {
@@ -39,13 +28,6 @@ void reconnect() {
     if ( client->connect(CLIENT_ID, TOKEN, NULL) ) {
       Serial.println( "[DONE]" );
 
-      /*NO SE ESTA USANDO*/
-      // if(client->subscribe(SUB_TOPIC, 1)){
-      //   Serial.print("Se pudo suscribir al topico " + String("\"") + String(SUB_TOPIC) + String("\""));
-      //   }
-      // else{
-      //   Serial.println("No se pudo suscribir");
-      // }
 
     } else {
       Serial.print( "[FAILED] [ rc = " );
