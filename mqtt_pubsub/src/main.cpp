@@ -1,6 +1,6 @@
 #include "config.h"
 #include "conexion.h"
-#include "Sensor.h"
+#include "Componente.h"
 
 /*Definimos las variables aca, 
 en el config.h estan como "extern" 
@@ -10,7 +10,7 @@ PubSubClient *client;
 SoftwareSerial *esp8266;  
 int status; 
 
-Sensor *sensores[MAX_SENSORES];
+Componente *componentes[MAX_COMPONENTES];
 
 
 void setup() {
@@ -28,12 +28,12 @@ void setup() {
   
   InitWiFi();
 
-  sensores[0] = new Sensor(client, PIN_TANQUE_MALTA, TOPICO_TANQUE_MALTA);
-  sensores[1] = new Sensor(client, PIN_TEMP_TANQUE, TOPICO_TEMP_TANQUE);
-  sensores[2] = new Sensor(client, PIN_PRESION_TANQUE, TOPICO_PRESION_TANQUE);
-  sensores[3] = new Sensor(client, PIN_BRILLO_TANQUE, TOPICO_BRILLO_TANQUE);
-  sensores[4] = new Sensor(client, PIN_VALVULA_AGUA, TOPICO_VALVULA_AGUA);
-  sensores[5] = new Sensor(client, PIN_VALVULA_MALTA, TOPICO_VALVULA_MALTA);
+  componentes[0] = new Componente(client, PIN_TANQUE_MALTA, TOPICO_TANQUE_MALTA);
+  componentes[1] = new Componente(client, PIN_TEMP_TANQUE, TOPICO_TEMP_TANQUE);
+  componentes[2] = new Componente(client, PIN_PRESION_TANQUE, TOPICO_PRESION_TANQUE);
+  componentes[3] = new Componente(client, PIN_BRILLO_TANQUE, TOPICO_BRILLO_TANQUE);
+  componentes[4] = new Componente(client, PIN_VALVULA_AGUA, TOPICO_VALVULA_AGUA);
+  componentes[5] = new Componente(client, PIN_VALVULA_MALTA, TOPICO_VALVULA_MALTA);
 
 }
 
@@ -55,11 +55,11 @@ void loop() {
   
   /*Leemos el potenciometro del tanque de malta y lo publicamos en su topico*/
   if(client->connected()){
-    for(int i=0; i<MAX_SENSORES; i++){
-      if(sensores[i]->publicar() != FALLO_PUBLICAR){
-        Serial.println("Se pudo publicar en el tópico " + sensores[i]->getTopico());
+    for(int i=0; i<MAX_COMPONENTES; i++){
+      if(componentes[i]->publicar() != FALLO_PUBLICAR){
+        Serial.println("Se pudo publicar en el tópico " + componentes[i]->getTopico());
       }else{
-        Serial.println("Fallo al publicar en el tópico " + sensores[i]->getTopico());
+        Serial.println("Fallo al publicar en el tópico " + componentes[i]->getTopico());
       }
     }
   }else{

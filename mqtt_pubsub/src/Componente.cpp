@@ -1,6 +1,6 @@
-#include "Sensor.h"
+#include "Componente.h"
 
-Sensor::Sensor(PubSubClient *cliente, int pin, char *topico){
+Componente::Componente(PubSubClient *cliente, int pin, char *topico){
 
     this->_cliente = cliente;
     this->_pin = pin;
@@ -10,17 +10,17 @@ Sensor::Sensor(PubSubClient *cliente, int pin, char *topico){
 
 }
 
-Sensor::~Sensor(){
+Componente::~Componente(){
     /*Destructor del objeto, libera la memoria pedida para el tópico*/
     free(this->_topico);
 }
 
-int Sensor::leer(){
+int Componente::leer(){
     /*Lee desde el el pin que tiene asignado*/
     return analogRead(this->_pin);
 }
 
-int Sensor::publicar(){
+int Componente::publicar(){
     /*Publica en el tópico MQTT que tiene asignado lo leído desde su pin.
     Devuelve el valor publicado, o un FALLO_PUBLICAR si no pudo*/
 
@@ -31,12 +31,12 @@ int Sensor::publicar(){
     ) == true ? _lectura : FALLO_PUBLICAR;
 }
 
-String Sensor::getTopico(){
+String Componente::getTopico(){
     /*Devuelvo su tópico*/
     return String(this->_topico);
 }
 
-int Sensor::getPin(){
+int Componente::getPin(){
     /*Devuelve su pin*/
     return this->_pin;
 }

@@ -7,7 +7,7 @@
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
 
-#define MAX_SENSORES 6
+#define MAX_COMPONENTES 6
 
 #define WIFI_AP "SerruyaCisco(noConectar)"
 #define WIFI_PASSWORD "Serruya5000050000Cisco"

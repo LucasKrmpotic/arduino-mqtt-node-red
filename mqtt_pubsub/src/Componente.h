@@ -1,22 +1,22 @@
 /*
-    Sensor de Arduino que puede publicar en un tópico MQTT lo que lee
+    Componente de Arduino que puede publicar en un tópico MQTT lo que lee
     Recibe un cliente PubSub (para la comunicación), un número de pin, y un tópico
 */
 
-#ifndef SENSOR_H
-#define SENSOR_H
+#ifndef COMPONENTE_H
+#define COMPONENTE_H
 
 #include "Arduino.h"
 #include <PubSubClient.h>
 
 #define FALLO_PUBLICAR -1
 
-class Sensor{
+class Componente{
 
     public:
         
-        Sensor(PubSubClient*, int, char*);
-        ~Sensor();
+        Componente(PubSubClient*, int, char*);
+        ~Componente();
         int leer();
         int publicar();
         String getTopico();
