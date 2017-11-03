@@ -20,15 +20,15 @@ int Componente::leer(){
     return analogRead(this->_pin);
 }
 
-int Componente::publicar(){
+int Componente::accionar(){
     /*Publica en el tópico MQTT que tiene asignado lo leído desde su pin.
-    Devuelve el valor publicado, o un FALLO_PUBLICAR si no pudo*/
+    Devuelve el valor publicado, o un FALLO_ACCIONAR si no pudo*/
 
     int _lectura = this->leer();
 
     return this->_cliente->publish(
         this->_topico, String(_lectura, DEC).c_str()
-    ) == true ? _lectura : FALLO_PUBLICAR;
+    ) == true ? _lectura : FALLO_ACCIONAR;
 }
 
 String Componente::getTopico(){

@@ -9,7 +9,7 @@
 #include "Arduino.h"
 #include <PubSubClient.h>
 
-#define FALLO_PUBLICAR -1
+#define FALLO_ACCIONAR -1
 
 class Componente{
 
@@ -18,7 +18,7 @@ class Componente{
         Componente(PubSubClient*, int, char*);
         ~Componente();
         int leer();
-        int publicar();
+        virtual int accionar();
         String getTopico();
         int getPin();
     private:

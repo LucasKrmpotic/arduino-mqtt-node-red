@@ -22,10 +22,7 @@ void setup() {
   
   //inicialización del ESP8266 como un dispositivo de comunicación serial
   esp8266 = new SoftwareSerial(TX_ESP8266, RX_ESP8266);  
-  
-  pinMode(PIN_VALVULA_AGUA, INPUT);
-  pinMode(PIN_VALVULA_MALTA, INPUT);
-  
+    
   InitWiFi();
 
   componentes[0] = new Componente(client, PIN_TANQUE_MALTA, TOPICO_TANQUE_MALTA);
@@ -56,10 +53,10 @@ void loop() {
   /*Leemos el potenciometro del tanque de malta y lo publicamos en su topico*/
   if(client->connected()){
     for(int i=0; i<MAX_COMPONENTES; i++){
-      if(componentes[i]->publicar() != FALLO_PUBLICAR){
-        Serial.println("Se pudo publicar en el tópico " + componentes[i]->getTopico());
+      if(componentes[i]->accionar() != FALLO_ACCIONAR){
+        Serial.println("Se pudo accionar en el tópico " + componentes[i]->getTopico());
       }else{
-        Serial.println("Fallo al publicar en el tópico " + componentes[i]->getTopico());
+        Serial.println("Fallo al accionar en el tópico " + componentes[i]->getTopico());
       }
     }
   }else{
