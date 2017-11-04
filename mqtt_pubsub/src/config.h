@@ -25,13 +25,13 @@
 #define TOPICO_PARADA_PROCESO "parada_proceso"
 
 /*PINES*/
-#define PIN_TANQUE_MALTA    2
-#define PIN_TEMP_TANQUE     3
-#define PIN_PRESION_TANQUE  4
-#define PIN_BRILLO_TANQUE   5
+#define PIN_TANQUE_MALTA    A2
+#define PIN_TEMP_TANQUE     A3
+#define PIN_PRESION_TANQUE  A4
+#define PIN_BRILLO_TANQUE   A5
 #define PIN_VALVULA_MALTA   11
 #define PIN_VALVULA_AGUA    10
-#define PIN_PARADA_PROCESO  9
+#define PIN_PARADA_PROCESO  3
 //Pin TX del ESP8266 tiene que ir al pin 13 del Arduino
 #define TX_ESP8266          13
 //Pin RX del ESP8266 tiene que ir al pin 12 del Arduino

@@ -10,18 +10,17 @@
 #include <PubSubClient.h>
 
 #define FALLO_ACCIONAR -1
+#define MAX_LECTURA 658
 
 class Componente{
-
     public:
-        
         Componente(PubSubClient*, int, char*);
         ~Componente();
         int leer();
         virtual int accionar();
         String getTopico();
         int getPin();
-    private:
+    protected:
         int _pin;
         char *_topico;
         PubSubClient *_cliente;

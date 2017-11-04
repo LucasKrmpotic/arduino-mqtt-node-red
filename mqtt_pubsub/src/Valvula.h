@@ -2,5 +2,6 @@
 
 class Valvula : public Componente
 {
-    Valvula(PubSubClient *cliente, int pin, char *topico);
+    public:
+        Valvula(PubSubClient *cliente, int pin, char *topico);
 };
