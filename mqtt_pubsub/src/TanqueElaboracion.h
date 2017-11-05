@@ -4,7 +4,8 @@
 
 class TanqueElaboracion : public Componente{
     public:
-        TanqueElaboracion(PubSubClient *cliente, int pin, char *topico, int calefaccion);
+        /*Recibe lo mismo que un Componente, y el pin que corresponderá a la calefacción*/
+        TanqueElaboracion(PubSubClient*, int, char*, int);
         int accionar();
         void encender_calefaccion();
         void apagar_calefaccion();

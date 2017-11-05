@@ -4,21 +4,24 @@ ParadaProceso::ParadaProceso(PubSubClient *cliente, int pin, char *topico, int a
     : Componente(cliente, pin, topico){
 
         this->_alarma = alarma;
-        attachInterrupt(digitalPinToInterrupt(this->_pin), ParadaProceso::manejar_parada_proceso, CHANGE);
+        pinMode(this->getPin(), INPUT);
+        pinMode(this->_alarma, OUTPUT);
+        digitalWrite(this->_alarma, LOW);
     }
 
-void ParadaProceso::encender_alarma(){
-    digitalWrite(this->_alarma, HIGH);
+int ParadaProceso::leer(){
+    return digitalRead(this->getPin());
 }
 
-void ParadaProceso::apagar_alarma(){
-    digitalWrite(this->_alarma, LOW);
+void ParadaProceso::parar_proceso(){
+    while (this->esta_parado())
+        ;
 }
 
-bool ParadaProceso::proceso_parado(){
-    return (bool)this->_alarma;
+bool ParadaProceso::esta_parado(){
+    return digitalRead(this->_alarma) == LOW; 
 }
 
-void manejar_parada_proceso(){
-
+int ParadaProceso::getPinAlarma(){
+    return this->_alarma;
 }

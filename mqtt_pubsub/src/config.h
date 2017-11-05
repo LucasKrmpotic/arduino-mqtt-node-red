@@ -7,12 +7,18 @@
 #include <PubSubClient.h>
 #include <SoftwareSerial.h>
 
-#define MAX_COMPONENTES 6
+//Maxima cantidad de componentes (sensores, actuadores, ...) utilizados
+#define MAX_COMPONENTES 7
 
-#define WIFI_AP "SerruyaCisco(noConectar)"
-#define WIFI_PASSWORD "Serruya5000050000Cisco"
+/*Nombre de la red a conectarse y contrasenia*/
+#define WIFI_AP ""
+#define WIFI_PASSWORD ""
+
+/*ID y Token con el cual va a publicar la placa*/
 #define CLIENT_ID "arduino_client"
 #define TOKEN "ARDUINO_DEMO_TOKEN"
+
+/*IP del broker MQTT*/
 #define SERVER "192.168.0.22"
 
 /*TOPICOS*/
@@ -31,7 +37,12 @@
 #define PIN_BRILLO_TANQUE   A5
 #define PIN_VALVULA_MALTA   11
 #define PIN_VALVULA_AGUA    10
-#define PIN_PARADA_PROCESO  3
+#define PIN_PARADA_PROCESO  2
+
+#define PIN_ALARMA_PARADA_PROCESO   7 
+#define PIN_ALARMA_MALTA            6
+#define PIN_CALEFACCION             5
+
 //Pin TX del ESP8266 tiene que ir al pin 13 del Arduino
 #define TX_ESP8266          13
 //Pin RX del ESP8266 tiene que ir al pin 12 del Arduino

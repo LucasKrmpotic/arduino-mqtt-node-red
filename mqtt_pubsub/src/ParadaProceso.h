@@ -3,13 +3,14 @@
 class ParadaProceso : public Componente
 {
     public:
-        ParadaProceso(PubSubClient *cliente, int pin, char *topico, int alarma);
-        int accionar();
-        void encender_alarma();
-        void apagar_alarma();
-        bool proceso_parado();
+        /*Recibe lo mismo que un Componente, más un número de pin que corresponderá al de la alarma
+        para indicar que el proceso está parado o no*/
+        ParadaProceso(PubSubClient*, int, char*, int);
+        int leer();
+        void parar_proceso();
+        bool esta_parado();
+        int getPinAlarma();
     private:
         int _alarma;
-        void manejar_parada_proceso();
 };
 

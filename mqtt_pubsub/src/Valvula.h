@@ -3,5 +3,6 @@
 class Valvula : public Componente
 {
     public:
-        Valvula(PubSubClient *cliente, int pin, char *topico);
+        Valvula(PubSubClient*, int, char*);
+        int leer();
 };

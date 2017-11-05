@@ -1,4 +1,6 @@
 #include "config.h"
+
+
 void InitWiFi()
 {
   // initialize serial for ESP module
