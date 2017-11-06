@@ -1,6 +1,6 @@
 #include "Componente.h"
 
-#define MINIMO_MALTA (MAX_LECTURA * 0.3)
+#define MINIMO_MALTA (this->leer() <= (MAX_LECTURA * 0.3))
 
 class TanqueMalta: public Componente{
     public:

@@ -6,22 +6,24 @@ ParadaProceso::ParadaProceso(PubSubClient *cliente, int pin, char *topico, int a
         this->_alarma = alarma;
         pinMode(this->getPin(), INPUT);
         pinMode(this->_alarma, OUTPUT);
-        digitalWrite(this->_alarma, LOW);
+        digitalWrite(this->_alarma, HIGH);
     }
 
 int ParadaProceso::leer(){
     return digitalRead(this->getPin());
 }
 
-void ParadaProceso::parar_proceso(){
+bool ParadaProceso::esta_parado(){
+    return digitalRead(this->_alarma) == false; 
+}
+
+void ParadaProceso::parar_proceso()
+{
+    this->accionar();
     while (this->esta_parado())
         ;
 }
 
-bool ParadaProceso::esta_parado(){
-    return digitalRead(this->_alarma) == LOW; 
-}
-
-int ParadaProceso::getPinAlarma(){
-    return this->_alarma;
+void ParadaProceso::togglear(){
+    digitalWrite(this->_alarma, !digitalRead(this->getPin()));
 }

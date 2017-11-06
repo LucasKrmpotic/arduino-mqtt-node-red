@@ -1,6 +1,6 @@
 #include "Componente.h"
 
-#define MINIMO_TEMPERATURA 150
+#define MINIMO_TEMPERATURA (this->leer() <= 150)
 
 class TanqueElaboracion : public Componente{
     public:

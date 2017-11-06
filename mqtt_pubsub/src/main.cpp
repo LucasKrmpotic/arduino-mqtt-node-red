@@ -37,9 +37,9 @@ void setup() {
   componentes[3] = new Componente(client, PIN_BRILLO_TANQUE, TOPICO_BRILLO_TANQUE);
   componentes[4] = new Valvula(client, PIN_VALVULA_AGUA, TOPICO_VALVULA_AGUA);
   componentes[5] = new Valvula(client, PIN_VALVULA_MALTA, TOPICO_VALVULA_MALTA);
-  
-  parada_proceso = new ParadaProceso(client, PIN_PARADA_PROCESO, TOPICO_PARADA_PROCESO, PIN_ALARMA_PARADA_PROCESO);
-  componentes[6] = parada_proceso;
+  componentes[6] = new ParadaProceso(client, PIN_PARADA_PROCESO, TOPICO_PARADA_PROCESO, PIN_ALARMA_PARADA_PROCESO);
+
+  parada_proceso = componentes[6];
   
   /*Asociamos la ISR a la interrupción de la parada de proceso*/
   attachInterrupt(digitalPinToInterrupt(parada_proceso->getPin()), manejar_parada_proceso, CHANGE);
@@ -74,7 +74,9 @@ void loop() {
       reconnect();
     }
   }else{
+    Serial.println("PROCESO DETENIDO");
     parada_proceso->parar_proceso();
+    Serial.println("PROCESO REANUDADO");
   }
    
   delay(1000);   

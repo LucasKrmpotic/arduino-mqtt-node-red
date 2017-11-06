@@ -7,9 +7,12 @@ class ParadaProceso : public Componente
         para indicar que el proceso está parado o no*/
         ParadaProceso(PubSubClient*, int, char*, int);
         int leer();
+        /*Detiene el proceso*/
         void parar_proceso();
+        /*Indica si el proceso está parado o no*/
         bool esta_parado();
-        int getPinAlarma();
+        /*Detiene el proceso si está corriendo, o lo reanuda si estaba detenido*/
+        void togglear();
     private:
         int _alarma;
 };

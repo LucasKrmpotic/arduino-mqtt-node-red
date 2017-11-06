@@ -11,8 +11,8 @@
 #define MAX_COMPONENTES 7
 
 /*Nombre de la red a conectarse y contrasenia*/
-#define WIFI_AP ""
-#define WIFI_PASSWORD ""
+#define WIFI_AP "SerruyaCisco(noConectar)"
+#define WIFI_PASSWORD "Serruya5000050000Cisco"
 
 /*ID y Token con el cual va a publicar la placa*/
 #define CLIENT_ID "arduino_client"
@@ -37,7 +37,7 @@
 #define PIN_BRILLO_TANQUE   A5
 #define PIN_VALVULA_MALTA   11
 #define PIN_VALVULA_AGUA    10
-#define PIN_PARADA_PROCESO  2
+#define PIN_PARADA_PROCESO  3
 
 #define PIN_ALARMA_PARADA_PROCESO   7 
 #define PIN_ALARMA_MALTA            6

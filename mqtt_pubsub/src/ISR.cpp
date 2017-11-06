@@ -5,6 +5,6 @@ extern ParadaProceso *parada_proceso;
 
 void manejar_parada_proceso(){
 
-    digitalWrite(parada_proceso->getPinAlarma(), !digitalRead(parada_proceso->getPin()));
+    parada_proceso->togglear();
     
 }
