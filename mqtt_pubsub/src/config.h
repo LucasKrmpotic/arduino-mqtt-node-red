@@ -11,15 +11,15 @@
 #define MAX_COMPONENTES 7
 
 /*Nombre de la red a conectarse y contrasenia*/
-#define WIFI_AP "SerruyaCisco(noConectar)"
-#define WIFI_PASSWORD "Serruya5000050000Cisco"
+#define WIFI_AP "luciano"
+#define WIFI_PASSWORD "luciano061196"
 
 /*ID y Token con el cual va a publicar la placa*/
 #define CLIENT_ID "arduino_client"
 #define TOKEN "ARDUINO_DEMO_TOKEN"
 
 /*IP del broker MQTT*/
-#define SERVER "192.168.0.22"
+#define SERVER "192.168.43.120"
 
 /*TOPICOS*/
 #define TOPICO_TANQUE_MALTA "tanque_malta"
