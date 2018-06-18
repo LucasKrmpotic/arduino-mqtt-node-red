@@ -9,6 +9,8 @@ Integrantes:
 - Luciano Serruya Aloisi
 - Lucas Krmpotic
 
+**El directorio del proyecto es `mqtt_pubsub`**
+
 [Demo de funcionamiento](https://www.youtube.com/watch?v=uqkqxmfkv90)
 
 --- 
